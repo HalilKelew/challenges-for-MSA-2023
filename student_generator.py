@@ -1,10 +1,11 @@
 import Student
+from datetime import datetime
 #Create 2 instances of Student
 
 def write_to_error_log(message):
     try:
         log_file = open("error_log.txt", "w")
-        log_file.write(message)
+        log_file.write(f"{datetime.now}{message} \n")
         log_file.close
     except Exception as err:
         print(str(err))
