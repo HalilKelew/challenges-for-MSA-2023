@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} View Students by Major {% endblock %}</h1>
+<form action="post">
+    <label for="major">Choose Major:</label>
+    <select name="major" id="major">
+        <option value="">Select a Major</option>
+        {% for major in major_list %}
+            <option value="{{major}}">{{major}}</option>
+    </select>
+</form>
+
+{% endblock %}
